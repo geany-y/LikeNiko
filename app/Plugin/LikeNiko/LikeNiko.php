@@ -32,7 +32,6 @@ class LikeNiko
 
 	public function setNikoMassegeBox(FilterResponseEvent $event)
     {
-        /*
         $request = $event->getRequest();
         $response = $event->getResponse();
         //if ('GET' === $request->getMethod()) {
@@ -48,18 +47,16 @@ class LikeNiko
             $parts = $this->app->renderView('LikeNiko/View/default/nikobox.twig', array(
                 'form' => $form->createView()
             ));
-            //try {
+            try {
                 $oldHtml = $crawler->filter('.front_page')->first()->html();
                 //$crawler->addHtmlContent($parts);
                 $newHtml = $oldHtml . $parts;
                 $html = str_replace($oldHtml, $newHtml, $html);
-            //} catch (\InvalidArgumentException $e) {
-            //}
+            } catch (\InvalidArgumentException $e) {
+            }
             //var_dump($html);
-            echo html_entity_decode($html, ENT_NOQUOTES, 'UTF-8');
-        //}
-        */
-	}
+            $response->setContent(html_entity_decode($html, ENT_NOQUOTES, 'UTF-8'));
+        }
 
     /**
      * 解析用HTMLを取得
