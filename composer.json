@@ -1,0 +1,63 @@
+{
+    "name": "ec-cube/ec-cube",
+    "description": "EC-CUBE EC open platform.",
+    "type": "project",
+    "homepage": "http://www.ec-cube.net/",
+    "license": [
+       "GPL-2.0",
+       "Commercial"
+    ],
+    "support": {
+        "issues": "https://github.com/EC-CUBE/ec-cube/issues"
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "silex/silex": "~1.2",
+        "silex/web-profiler": "~1.0",
+        "doctrine/orm": "<2.5",
+        "symfony/monolog-bridge": ">=2.7,<2.8",
+        "symfony/twig-bridge": ">=2.7,<2.8",
+        "symfony/finder": ">=2.7,<2.8",
+        "symfony/yaml": ">=2.7,<2.8",
+        "symfony/form": ">=2.7,<2.8",
+        "symfony/validator": ">=2.7,<2.8",
+        "symfony/translation": ">=2.7,<2.8",
+        "symfony/config": ">=2.7,<2.8",
+        "symfony/security": ">=2.7,<2.8",
+        "symfony/doctrine-bridge": ">=2.7,<2.8",
+        "symfony/class-loader": ">=2.7,<2.8",
+        "symfony/css-selector": ">=2.7,<2.8",
+        "symfony/dom-crawler": ">=2.7,<2.8",
+        "symfony/serializer": ">=2.7,<2.8",
+        "dflydev/doctrine-orm-service-provider": "*",
+        "saxulum/saxulum-doctrine-orm-manager-registry-provider": "*",
+        "saxulum/saxulum-webprofiler-provider": "*",
+        "swiftmailer/swiftmailer": "5.*",
+        "knplabs/knp-components": "*",
+        "doctrine/migrations": "v1.0.0-alpha3@dev",
+        "knplabs/console-service-provider": "@dev",
+        "nesbot/carbon": "~1.20",
+        "guzzle/guzzle": "~3.9",
+        "egulias/email-validator": "^1.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.6.*",
+        "mikey179/vfsStream": "~1",
+        "fzaninotto/faker":"1.*",
+        "phing/phing": "2.*",
+        "symfony/browser-kit": ">=2.7,<2.8",
+        "fabpot/php-cs-fixer": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Eccube\\": "src/Eccube",
+            "Plugin\\": "app/Plugin",
+            "Dbtlr\\MigrationProvider\\Provider\\": "src/silex-doctrine-migrations"
+        }
+    },
+    "autoload-dev" : {
+        "psr-4": {
+            "Eccube\\Tests\\" : "tests/Eccube/Tests"
+        }
+    }
+}
